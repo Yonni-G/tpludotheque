@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <title>Création nouveau client</title>
     <!-- Inclusion des éléments du header -->
     <th:block th:replace="fragments/header :: head"></th:block>
 </head>
@@ -17,16 +18,25 @@
     <fieldset>
         <legend>Informations du client</legend>
         <!-- Contenu du fieldset ici -->
-        <form method="post" th:action="@{/registration}" th:object="${client}">
+        <form method="post" th:action="@{/client/creation}" th:object="${client}">
             <div id="formContainer">
                 <div class="labelContainer">
-                    <label for="nom">Nom</label><br />
-                    <label for="prenom">Prénom</label>
+                    <label for="nom">Nom</label><br>
+                    <label for="prenom">Prénom</label><br>
+                    <label for="email">Email</label><br>
+                    <label for="noTel">Téléphone (optionnel)</label><br>
+                    <label for="rue">Rue</label><br>
+                    <label for="codePostal">Code postal</label><br>
+                    <label for="ville">Ville</label>
                 </div>
                 <div class="inputContainer">
-                    <input th:field="*{nom}"  required minlength="3" type="text" id="nom" placeholder="Nom ?"><br />
-                    <input th:field="*{prenom}" required minlength="3" type="text" id="prenom" name="prenom" placeholder="Prénom ?">
-                    
+                    <input th:field="*{nom}"  required minlength="1" maxlength="50" type="text" id="nom" placeholder="Nom ?"><br>
+                    <input th:field="*{prenom}" required minlength="3" maxlength="50" type="text" id="prenom" placeholder="Prénom ?"><br>
+                    <input th:field="*{email}" required type="email" id="email" placeholder="Email ?"><br>
+                    <input th:field="*{noTel}" maxlength="10" minlength="10" pattern="\d{10}" type="text" id="noTel" placeholder="Téléphone ?"><br>
+                    <input th:field="*{rue}" required  minlength="10" maxlength="50" type="text" id="rue" placeholder="Rue ?"><br>
+                    <input th:field="*{codePostal}" required maxlength="5" minlength="5" pattern="([A-Za-z]{1}[0-9]{4})|([0-9]{5})" type="text" id="codePostal" placeholder="Code postal ?"><br>
+                    <input th:field="*{ville}" required minlength="2" maxlength="50" type="text" id="ville" placeholder="Ville ?"><br>
                 </div>
             </div>
             <div id="formActions"><input type="submit" value="Enregistrer"></div>
