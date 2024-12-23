@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!-- Inclusion des éléments du header -->
+    <th:block th:replace="fragments/header :: head"></th:block>
+</head>
+<body>
+
+<!-- Inclusion du header (le contenu du header sans <head>) -->
+<th:block th:replace="fragments/header :: body"></th:block>
+
+<!-- Contenu principal de la page -->
+<main>
+    <h2>Page d'accueil</h2>
+    <p>Voici le contenu principal de la page d'accueil. Vous pouvez ajouter des informations supplémentaires ici.</p>
+</main>
+
+<!-- Inclusion du footer -->
+<th:block th:replace="fragments/footer"></th:block>
+
+</body>
+</html>

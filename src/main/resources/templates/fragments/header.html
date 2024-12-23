@@ -1,0 +1,26 @@
+<!-- header.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon site Web</title>
+    <!-- Lien vers le fichier CSS -->
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<!-- Header visuel du site -->
+<header>
+    <div class="header-content">
+        <h1>header</h1>
+        <nav>
+            <ul>
+                <li><a href="/" th:href="@{/}">Accueil</a></li>
+                <li><a href="/about" th:href="@{/about}">À propos</a></li>
+                <li><a href="/contact" th:href="@{/contact}">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+</body>
+</html>
