@@ -6,12 +6,12 @@ public class Client {
     private int noClient;
     @NotNull
     @NotEmpty
-    @Size(min = 1, max = 50)
+    @Size(min = 3, max = 50)
     private String nom;
 
     @NotNull
     @NotEmpty
-    @Size(min = 1, max = 50)
+    @Size(min = 3, max = 50)
     private String prenom;
 
     @Email
@@ -33,6 +33,9 @@ public class Client {
     @NotEmpty
     @Size(min = 2, max = 50)
     private String ville;
+
+    public Client() {
+    }
 
     @Override
     public String toString() {
