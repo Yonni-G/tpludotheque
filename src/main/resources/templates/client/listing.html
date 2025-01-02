@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Listing des clients</title>
+    <!-- Inclusion des éléments du header -->
+    <th:block th:replace="~{fragments/header :: head}"></th:block>
+</head>
+<body>
+
+<!-- Inclusion du header (le contenu du header sans <head>) -->
+<th:block th:replace="~{fragments/header :: body}"></th:block>
+
+<!-- Contenu principal de la page -->
+<main>
+    <h2>Listing des clients</h2>
+    <p>Avec une partie des informations </p>
+
+
+        <!-- Contenu du fieldset ici -->
+        <table th:object="${clients}">
+            <thead><tr>
+                <th>Actions</th>
+                <td>Nom</td>
+                <td>Prénom</td>
+                <td>Email</td>
+                <td>Numéro de téléphone</td>
+                <td>Rue</td>
+                <td>Code postal</td>
+                <td>Ville</td>
+
+            </tr></thead>
+            <tbody>
+            <tr th:each="client : ${clients}">
+                <td>
+                    <a th:href="@{/client/modifier/{id}(id=${client.noClient})}">Modifier</a>
+                </td>
+                <td th:text="${client.nom}"></td>
+                <td th:text="${client.prenom}"></td>
+                <td th:text="${client.email}"></td>
+                <td th:text="${client.noTel}"></td>
+                <td th:text="${client.rue}"></td>
+                <td th:text="${client.codePostal}"></td>
+                <td th:text="${client.ville}"></td>
+            </tr>
+            </tbody>
+        </table>
+</main>
+
+<!-- Inclusion du footer -->
+<th:block th:replace="~{fragments/footer}"></th:block>
+
+</body>
+</html>

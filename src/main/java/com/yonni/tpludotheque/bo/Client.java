@@ -3,7 +3,9 @@ package com.yonni.tpludotheque.bo;
 import jakarta.validation.constraints.*;
 
 public class Client {
-    private int noClient;
+
+    private Integer noClient;
+
     @NotNull
     @NotEmpty
     @Size(min = 3, max = 50)
@@ -51,7 +53,7 @@ public class Client {
                 '}';
     }
 
-    public int getNoClient() {
+    public Integer getNoClient() {
         return noClient;
     }
 

@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>header</title>
     <!-- Lien vers le fichier CSS -->
-    <link rel="stylesheet" th:href="@{/css/styles.css}">
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
 </head>
 <body>
 <!-- Header visuel du site -->
@@ -17,7 +21,7 @@
             <ul>
                 <li><a th:href="@{/}">Accueil</a></li>
                 <li><a th:href="@{/client/creation}">Ajouter un client</a></li>
-                <li><a th:href="@{/contact}">Contact</a></li>
+                <li><a th:href="@{/client/listing}">Lister les clients</a></li>
             </ul>
         </nav>
     </div>

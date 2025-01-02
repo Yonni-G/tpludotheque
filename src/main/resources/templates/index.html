@@ -2,12 +2,13 @@
 <html lang="fr" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!-- Inclusion des éléments du header -->
-    <th:block th:replace="fragments/header :: head"></th:block>
+    <th:block th:replace="~{fragments/header :: head}"></th:block>
+    <title>accueil</title>
 </head>
 <body>
 
 <!-- Inclusion du header (le contenu du header sans <head>) -->
-<th:block th:replace="fragments/header :: body"></th:block>
+<th:block th:replace="~{fragments/header :: body}"></th:block>
 
 <!-- Contenu principal de la page -->
 <main>
@@ -16,7 +17,7 @@
 </main>
 
 <!-- Inclusion du footer -->
-<th:block th:replace="fragments/footer"></th:block>
+<th:block th:replace="~{fragments/footer}"></th:block>
 
 </body>
 </html>
